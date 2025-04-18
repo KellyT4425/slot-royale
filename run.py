@@ -1,5 +1,6 @@
 import random
 
+
 def welcome_user():
     """
     This function asks for an input from the user and display a welcome message, followed by
@@ -8,8 +9,9 @@ def welcome_user():
     name = input("Please enter your name: \n")
     print(f"Welcome {name} this is Slot Royale.\n")
     print("The game is simple, deposit money to your account, make a bet and test your LUCK.")
-    print("You have 3 attempts to win, lets get started.")
-    return name 
+    print("You have 3 attempts to win, lets get started. \n")
+    return name
+
 
 def exception_error():
     """
@@ -17,36 +19,46 @@ def exception_error():
     for bets and money deposits ints are correct values in floating-point format.
     """
 
+
 def user_deposit():
     """
     This function allows the user to input a deposit in other to place bets
     """
     balance = 0
     deposit = input("Please make a deposit: £ \n")
-    balance += float(deposit) # should return 2 decimal places!
+    balance += float(deposit)  # should return 2 decimal places!
     print(f"Your balance is: £{balance}")
-    
+
     return balance
 
-def make_bet():
+
+def make_bet(balance):
     """
     Function to allow user to place a bet before playing, this will be decremented
     from there balance. 
     """
     bet = 0
     bet_amount = input("Please place a bet: £  \n")
-    bet += float(bet_amount) # should return 2 decimal places!
-    print(f"Your bet is: £{bet}")
+    bet += float(bet_amount)  # should return 2 decimal places!
+    print(f"Your bet is: £{bet}\n")
+    decrement_balance(balance, bet)
 
     return bet
 
 
+def decrement_balance(balance, bet):
+    result = balance - bet
+    return result
+
+# def slot_machine(bet, balance):
 
 
 def main():
-   welcome_user() 
-   user_deposit()
-   make_bet()
+    welcome_user()
+    balance = user_deposit()
+    bet = make_bet(balance)
+    new_balance = decrement_balance(balance, bet)
+    print(f"Your balance is now: £{new_balance}, Lets play!")
 
 
 main()
