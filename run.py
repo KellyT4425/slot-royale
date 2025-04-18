@@ -23,15 +23,30 @@ def user_deposit():
     """
     balance = 0
     deposit = input("Please make a deposit: £ \n")
-    balance += float(deposit)
+    balance += float(deposit) # should return 2 decimal places!
     print(f"Your balance is: £{balance}")
     
     return balance
+
+def make_bet():
+    """
+    Function to allow user to place a bet before playing, this will be decremented
+    from there balance. 
+    """
+    bet = 0
+    bet_amount = input("Please place a bet: £  \n")
+    bet += float(bet_amount) # should return 2 decimal places!
+    print(f"Your bet is: £{bet}")
+
+    return bet
+
+
 
 
 def main():
    welcome_user() 
    user_deposit()
+   make_bet()
 
 
 main()
