@@ -47,6 +47,9 @@ def make_bet(balance):
 
 
 def decrement_balance(balance, bet):
+    """
+    Function takes the user bet amount away from the users balance.
+    """
     result = balance - bet
     return result
 
