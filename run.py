@@ -23,8 +23,11 @@ def user_deposit():
     """
     balance = 0
     deposit = input("Please make a deposit: £ \n")
-    print(f"Your balance is: £{deposit}")
-    return deposit
+    balance += float(deposit)
+    print(f"Your balance is: £{balance}")
+    
+    return balance
+
 
 def main():
    welcome_user() 
