@@ -1,14 +1,31 @@
 import random
 
 
+def program_banner():
+
+    print()
+    print((35 * " ") + "This is" + (35 * " "))
+    print(r"""
+  _____ _       ___   ______      ____    ___   __ __   ____  _        ___ 
+ / ___/| |     /   \ |      |    |    \  /   \ |  |  | /    || |      /  _]
+(   \_ | |    |     ||      |    |  D  )|     ||  |  ||  o  || |     /  [_ 
+ \__  || |___ |  O  ||_|  |_|    |    / |  O  ||  ~  ||     || |___ |    _]
+ /  \ ||     ||     |  |  |      |    \ |     ||___, ||  _  ||     ||   [_ 
+ \    ||     ||     |  |  |      |  .  \|     ||     ||  |  ||     ||     |
+  \___||_____| \___/   |__|      |__|\_| \___/ |____/ |__|__||_____||_____|
+                                                                           
+""")
+
+
 def welcome_user():
     """
     This function asks for an input from the user and displays a welcome message, followed by
     brief instructions on the game.
     """
     name = input("Please enter your name: \n")
-    print(f"Welcome {name} this is Slot Royale. \U0001F44B \n")
-    print("The game is simple, deposit money to your account, make a bet and test your LUCK. \U0001F340  \n")
+    print(f"Welcome {name} to Slot Royale. \U0001F44B \n")
+    print("The game is simple, deposit money to your account,")
+    print("make a bet and test your LUCK. \U0001F340  \n")
     return name
 
 
@@ -114,6 +131,7 @@ def slot_machine(bet, new_balance):
 
 
 def main():
+    program_banner()
     welcome_user()
     balance = user_deposit()
     bet = make_bet(balance)  # PARAMETER NOT IN USE!!!!!
