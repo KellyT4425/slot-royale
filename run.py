@@ -4,20 +4,19 @@ import emoji
 
 def welcome_user():
     """
-    This function asks for an input from the user and display a welcome message, followed by
+    This function asks for an input from the user and displays a welcome message, followed by
     brief instructions on the game.
     """
     name = input("Please enter your name: \n")
     print(f"Welcome {name} this is Slot Royale.\n")
-    print("The game is simple, deposit money to your account, make a bet and test your LUCK.")
-    print("You have 3 attempts to win, lets get started. \n")
+    print("The game is simple, deposit money to your account, make a bet and test your LUCK. \n")
     return name
 
 
 def exception_error():
     """
     This function will ensure that the users inputs are valid, for name letters/chars are accepted
-    for bets and money deposits ints are correct values in floating-point format.
+    for bets and money deposits are correct values in floating-point format.
     """
 
 
@@ -42,20 +41,24 @@ def make_bet(balance):
     bet_amount = input("Please place a bet: £  \n")
     bet += float(bet_amount)  # should return 2 decimal places!
     print(f"Your bet is: £{bet}\n")
-    # decrement_balance(balance, bet)
 
     return bet
 
 
-def decrement_balance(balance, bet):
+def decrement_balance(new_balance, bet):
     """
     Function takes the user bet amount away from the users balance.
     """
-    result = balance - bet
+    result = new_balance - bet
     return result
 
 
-def slot_machine(bet, balance, new_balance):
+def slot_machine(bet, new_balance):
+    """
+    slot machine - takes a tuple of emojis, displays a random
+    selection for user. 3 matched = win new balance displayed, if user
+    loses balance decremented.
+    """
     EMOJIS = ('\U0001F34A', '\U0001F34B', '\U0001F34E', '\U00002B50')
 
     spin1 = random.choice(EMOJIS)
@@ -69,25 +72,37 @@ def slot_machine(bet, balance, new_balance):
         if spin1 == spin2 == spin3:
             print("JACKPOT you won! \U0001F911 \n")
             winnings = bet * 3
-            balance += winnings
-            print(f"Congratulations you WON {winnings}\n")
+            new_balance += winnings
+            print(f"Congratulations you WON £{winnings}\n")
 
         else:
             print("You lost this round.")
-            decrement_balance(balance, bet)
 
         print(f"Your current balance is: £{new_balance}")
 
-        if balance == 0:
+        if new_balance == 0:
             print("You have no more funds! Game Over")
-            # make_bet(balance)
+
             break
 
         go_again = input("Play again? (y/n): \n").lower()
         if go_again != "y":
             print(
-                f"Thank you for Playing your final balance is: {new_balance}")
+                f"Thank you for Playing your final balance is: £{new_balance} \n")
             break
+        else:
+            if go_again != "n":
+                new_bet = 0
+
+                new_bet = input("Please place a new bet: £ \n")
+                bet += float(new_bet)
+                new_balance = new_balance - float(new_bet)
+
+                spin1 = random.choice(EMOJIS)
+                spin2 = random.choice(EMOJIS)
+                spin3 = random.choice(EMOJIS)
+
+                print(f"| {spin1} | {spin2} | {spin3} |\n")
 
 
 def main():
