@@ -26,6 +26,7 @@ def welcome_user():
     print(f"Welcome {name} to Slot Royale. \U0001F44B \n")
     print("The game is simple, deposit money to your account,")
     print("make a bet and test your LUCK. \U0001F340  \n")
+
     return name
 
 
@@ -48,7 +49,7 @@ def user_deposit():
     return balance
 
 
-def make_bet(balance):  # NOT IN USE!!!!
+def make_bet():
     """
     Function to allow user to place a bet before playing, this will be decremented
     from there balance. 
@@ -81,7 +82,7 @@ def slot_machine(bet, new_balance):
     spin2 = random.choice(EMOJIS)
     spin3 = random.choice(EMOJIS)
 
-    print(f"| {spin1} | {spin2} | {spin3} |\n")
+    print(f" | {spin1} | {spin2} | {spin3} | \n")
 
     while True:
         """
@@ -98,13 +99,20 @@ def slot_machine(bet, new_balance):
         else:
             print("You lost this round. \U0001f641 \n")
 
-        print(f"Your current balance is: £{new_balance}")
+        print(f"Your current balance is: £{new_balance} \n")
 
-        if new_balance == 0 and new_balance < 0:
+        # ATTEMPT TO FIX BALANCE GOING INTO MINUS.
+        if new_balance == 0:
             print("You have no more funds! Game Over \U00002620 ")
-            print("Restart and top up your Balance! \U0001F929 ")
+            print("Restart and top up your Balance! \U0001F929 \n")
 
             break
+        else:
+            if bet > new_balance:
+                print("Ooops, You don't have enough in your balance!")
+                print(f"Your balance is: £{new_balance} \n")
+                # bet += make_bet()
+                new_balance = new_balance - bet
 
         go_again = input("Play again? (y/n): \n").lower()
         """
@@ -117,11 +125,8 @@ def slot_machine(bet, new_balance):
             break
         else:
             if go_again != "n":
-                new_bet = 0
 
-                new_bet = input("Please place a new bet: £ \n")
-                bet += float(new_bet)
-                new_balance = new_balance - float(new_bet)
+                make_bet()
 
                 spin1 = random.choice(EMOJIS)
                 spin2 = random.choice(EMOJIS)
@@ -134,7 +139,7 @@ def main():
     program_banner()
     welcome_user()
     balance = user_deposit()
-    bet = make_bet(balance)  # PARAMETER NOT IN USE!!!!!
+    bet = make_bet()  # PARAMETER NOT IN USE!!!!!
     new_balance = decrement_balance(balance, bet)
     slot_machine(bet, new_balance)
 
