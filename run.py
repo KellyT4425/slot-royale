@@ -1,5 +1,4 @@
 import random
-import emoji
 
 
 def welcome_user():
@@ -8,8 +7,8 @@ def welcome_user():
     brief instructions on the game.
     """
     name = input("Please enter your name: \n")
-    print(f"Welcome {name} this is Slot Royale.\n")
-    print("The game is simple, deposit money to your account, make a bet and test your LUCK. \n")
+    print(f"Welcome {name} this is Slot Royale. \U0001F44B \n")
+    print("The game is simple, deposit money to your account, make a bet and test your LUCK. \U0001F340  \n")
     return name
 
 
@@ -27,12 +26,12 @@ def user_deposit():
     balance = 0
     deposit = input("Please make a deposit: £ \n")
     balance += float(deposit)  # should return 2 decimal places!
-    print(f"Your balance is: £{balance}")
+    print(f"Your balance is: £{balance} \U0001F4B8 \n")
 
     return balance
 
 
-def make_bet(balance):
+def make_bet(balance):  # NOT IN USE!!!!
     """
     Function to allow user to place a bet before playing, this will be decremented
     from there balance. 
@@ -68,27 +67,36 @@ def slot_machine(bet, new_balance):
     print(f"| {spin1} | {spin2} | {spin3} |\n")
 
     while True:
+        """
+        If spin1, spin2, spin3 == then it is a win. bet * 3, new_balance updated with 
+        winnings. else: user lost the round.
+        """
 
         if spin1 == spin2 == spin3:
             print("JACKPOT you won! \U0001F911 \n")
             winnings = bet * 3
             new_balance += winnings
-            print(f"Congratulations you WON £{winnings}\n")
+            print(f"Congratulations you WON £{winnings} \U0001F917 \n")
 
         else:
-            print("You lost this round.")
+            print("You lost this round. \U0001f641 \n")
 
         print(f"Your current balance is: £{new_balance}")
 
         if new_balance == 0:
-            print("You have no more funds! Game Over")
+            print("You have no more funds! Game Over \U00002620 ")
+            print("Restart and top up your Balance! \U0001F929 ")
 
             break
 
         go_again = input("Play again? (y/n): \n").lower()
+        """
+        Provides user with an option to play again after a win or loss. User
+        offered to make a new bet.
+        """
         if go_again != "y":
             print(
-                f"Thank you for Playing your final balance is: £{new_balance} \n")
+                f"Thank you for Playing your final balance is: £{new_balance} \U0001F44B \n")
             break
         else:
             if go_again != "n":
@@ -108,9 +116,9 @@ def slot_machine(bet, new_balance):
 def main():
     welcome_user()
     balance = user_deposit()
-    bet = make_bet(balance)
+    bet = make_bet(balance)  # PARAMETER NOT IN USE!!!!!
     new_balance = decrement_balance(balance, bet)
-    slot_machine(bet, balance, new_balance)
+    slot_machine(bet, new_balance)
 
 
 main()
