@@ -100,7 +100,7 @@ def slot_machine(bet, new_balance):
 
         print(f"Your current balance is: £{new_balance}")
 
-        if new_balance == 0:
+        if new_balance == 0 or new_balance < 0:
             print("You have no more funds! Game Over \U00002620 ")
             print("Restart and top up your Balance! \U0001F929 ")
 
