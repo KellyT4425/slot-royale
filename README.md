@@ -1,4 +1,4 @@
-![Slot Royale](readme-images/casino-default.webp)
+![Slot Royale](readme-images/slot_royale_start.png)
 
 # **Slot Royale**
 
@@ -15,8 +15,10 @@
 ![Lucid Chart](readme-images/lucid-chart.png)
 
 ## Features
+  * `program_banner()`
   * `welcome_user()`
-  * `exception_error()`
+  * `user_valid_name()`
+  * `user_valid_float()`
   * `user_deposit()`
   * `make_bet()`
   * `decrement_balance()`
