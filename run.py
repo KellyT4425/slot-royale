@@ -6,14 +6,14 @@ def program_banner():
     print()
     print((35 * " ") + "This is" + (35 * " "))
     print(r"""
-  _____ _       ___   ______      ____    ___   __ __   ____  _        ___ 
+  _____ _       ___   ______      ____    ___   __ __   ____  _        ___
  / ___/| |     /   \ |      |    |    \  /   \ |  |  | /    || |      /  _]
-(   \_ | |    |     ||      |    |  D  )|     ||  |  ||  o  || |     /  [_ 
+(   \_ | |    |     ||      |    |  D  )|     ||  |  ||  o  || |     /  [_
  \__  || |___ |  O  ||_|  |_|    |    / |  O  ||  ~  ||     || |___ |    _]
- /  \ ||     ||     |  |  |      |    \ |     ||___, ||  _  ||     ||   [_ 
+ /  \ ||     ||     |  |  |      |    \ |     ||___, ||  _  ||     ||   [_
  \    ||     ||     |  |  |      |  .  \|     ||     ||  |  ||     ||     |
   \___||_____| \___/   |__|      |__|\_| \___/ |____/ |__|__||_____||_____|
-                                                                           
+
 """)
 
 
@@ -22,7 +22,7 @@ def welcome_user():
     This function asks for an input from the user and displays a welcome message, followed by
     brief instructions on the game.
     """
-    name = input("Please enter your name: \n")
+    name = get_valid_name()
     print(f"Welcome {name} to Slot Royale. \U0001F44B \n")
     print("The game is simple, deposit money to your account,")
     print("make a bet and test your LUCK. \U0001F340  \n")
@@ -30,41 +30,77 @@ def welcome_user():
     return name
 
 
-def exception_error():
+def get_valid_name():
     """
-    This function will ensure that the users inputs are valid, for name letters/chars are accepted
-    for bets and money deposits are correct values in floating-point format.
+    Asks user for name input, checks the actual name, ensuring any extra spaces are not included in
+    validation. If invalid it informs the user and asks for letters only and loops asking user
+    for input again.
     """
+    while True:
+        # Removes any leading or trailing spaces from the input
+        name = input("Please enter your name: \n").strip()
+        # checks for letters, removes extra spaces.
+        if name.replace(" ", "").isalpha():
+            return name
+        else:
+            print("Invalid name. Please use letters only.\n")
+
+
+def get_valid_float(prompt, min_value=0.01, max_value=None):
+    """
+    Ensure the user is inputing a valid number or float like 10 or 10.00. This
+    function is usering in deposits and bets.
+
+    """
+    while True:
+        try:
+            # ensures flexibilty using input prompt
+            value = float(input(prompt))
+            if value < min_value:  # checks if users value input is < min_value default parameter.
+                print(
+                    f"Please enter an amount greater than or equal to £{min_value:.2f}.\n")
+            # checks that max_value is not None and that the user value is
+            # > max_value such as users balance. parameter is optional if user does not
+            # provide a max_value it will default to None.
+            elif max_value is not None and value > max_value:
+                print(
+                    f"Please enter an amount less than or equal to £{max_value:.2f}.\n")
+            else:
+                return round(value, 2)  # rounds result to 2 decimal places.
+        except ValueError:
+            print("Invalid input. Please enter a number like 10 or 10.00\n")
 
 
 def user_deposit():
     """
-    This function allows the user to input a deposit in other to place bets
+    This function allows the user to input a deposit in order to place bets.
+    It is using the get_valid_float() to validate user input. As specified above
+    with value = float(input(prompt))
     """
     balance = 0
-    deposit = input("Please make a deposit: £ \n")
-    balance += float(deposit)  # should return 2 decimal places!
-    print(f"Your balance is: £{balance} \U0001F4B8 \n")
+    deposit = get_valid_float("Please make a deposit: £ \n")
+    balance += deposit
 
     return balance
 
 
-def make_bet():
+def make_bet(current_balance):
     """
     Function to allow user to place a bet before playing, this will be decremented
-    from there balance. 
+    from there balance. It also ensures that the user does not over bet there 
+    balance
     """
-    bet = 0
-    bet_amount = input("Please place a bet: £  \n")
-    bet += float(bet_amount)  # should return 2 decimal places!
-    print(f"Your bet is: £{bet}\n")
-
-    return bet
+    while True:
+        # Using the get_valid_float() it is assigning the max_value parameter to the current_balance
+        # ensuring the user does not over bet there current balance as it is set to max.
+        bet = get_valid_float(
+            f"Please place a bet (max £{current_balance:.2f}): £\n", max_value=current_balance)
+        return bet
 
 
 def decrement_balance(new_balance, bet):
     """
-    Function takes the user bet amount away from the users balance.
+    Function takes the user bet amount away from the users new balance.
     """
     result = new_balance - bet
     return result
@@ -82,66 +118,63 @@ def slot_machine(bet, new_balance):
     spin2 = random.choice(EMOJIS)
     spin3 = random.choice(EMOJIS)
 
-    print(f" | {spin1} | {spin2} | {spin3} | \n")
+    print(f"| {spin1} | {spin2} | {spin3} |\n")
 
     while True:
         """
         If spin1, spin2, spin3 == then it is a win. bet * 3, new_balance updated with 
         winnings. else: user lost the round.
         """
+        new_balance = decrement_balance(
+            new_balance, bet)  # decrements bet from balance.
 
         if spin1 == spin2 == spin3:
             print("JACKPOT you won! \U0001F911 \n")
             winnings = bet * 3
             new_balance += winnings
-            print(f"Congratulations you WON £{winnings} \U0001F917 \n")
+            print(f"Congratulations you WON £{winnings:.2f} \U0001F917 \n")
 
-        else:
+        else:  # lost round, display balance, moves to play_again.
             print("You lost this round. \U0001f641 \n")
+            print(f"Your current balance is: £{new_balance:.2f} \n")
 
-        print(f"Your current balance is: £{new_balance} \n")
-
-        # ATTEMPT TO FIX BALANCE GOING INTO MINUS.
-        if new_balance == 0:
+        if new_balance == 0:  # Once at 0 game is over
             print("You have no more funds! Game Over \U00002620 ")
             print("Restart and top up your Balance! \U0001F929 \n")
 
             break
-        else:
-            if bet > new_balance:
-                print("Ooops, You don't have enough in your balance!")
-                print(f"Your balance is: £{new_balance} \n")
-                # bet += make_bet()
-                new_balance = new_balance - bet
 
         go_again = input("Play again? (y/n): \n").lower()
         """
         Provides user with an option to play again after a win or loss. User
         offered to make a new bet.
         """
-        if go_again != "y":
+        if go_again == "y":
+
+            # asking for new bet from user to continue playing.
+            bet = make_bet(new_balance)
+
+            spin1 = random.choice(EMOJIS)
+            spin2 = random.choice(EMOJIS)
+            spin3 = random.choice(EMOJIS)
+
+            print(f"| {spin1} | {spin2} | {spin3} |\n")
+
+            continue
+
+        if go_again == "n":
             print(
-                f"Thank you for Playing your final balance is: £{new_balance} \U0001F44B \n")
+                f"Thank you for Playing your final balance is: £{new_balance:.2f} \U0001F44B \n")
+
             break
-        else:
-            if go_again != "n":
-
-                make_bet()
-
-                spin1 = random.choice(EMOJIS)
-                spin2 = random.choice(EMOJIS)
-                spin3 = random.choice(EMOJIS)
-
-                print(f"| {spin1} | {spin2} | {spin3} |\n")
 
 
 def main():
     program_banner()
     welcome_user()
     balance = user_deposit()
-    bet = make_bet()  # PARAMETER NOT IN USE!!!!!
-    new_balance = decrement_balance(balance, bet)
-    slot_machine(bet, new_balance)
+    bet = make_bet(balance)
+    slot_machine(bet, balance)
 
 
 main()
