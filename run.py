@@ -1,5 +1,6 @@
 import random
 import os
+import time
 
 
 def program_banner():
@@ -123,7 +124,7 @@ def slot_machine(bet, new_balance):
     spin2 = random.choice(EMOJIS)
     spin3 = random.choice(EMOJIS)
 
-    print(f"| {spin1} | {spin2} | {spin3} |\n")
+    # print(f"| {spin1} | {spin2} | {spin3} |\n")
 
     while True:
         """
@@ -132,6 +133,17 @@ def slot_machine(bet, new_balance):
         """
         new_balance = decrement_balance(
             new_balance, bet)  # decrements bet from balance.
+
+        # clear_console()
+        print("Spinning the reels...", end="", flush=True)
+        for i in range(20):  # Number of spin cycles
+            spin1 = random.choice(EMOJIS)
+            spin2 = random.choice(EMOJIS)
+            spin3 = random.choice(EMOJIS)
+            print(f"\r| {spin1} | {spin2} | {spin3} | \n", end="", flush=True)
+            time.sleep(0.1)  # Delay between "spins"
+
+        print()  # Move to next line after final spin result
 
         if spin1 == spin2 == spin3:
             print("JACKPOT you won! \U0001F911 \n")
@@ -172,13 +184,14 @@ def slot_machine(bet, new_balance):
 
             # asking for new bet from user to continue playing.
             clear_console()
+            program_banner()
             bet = make_bet(new_balance)
 
             spin1 = random.choice(EMOJIS)
             spin2 = random.choice(EMOJIS)
             spin3 = random.choice(EMOJIS)
 
-            print(f"| {spin1} | {spin2} | {spin3} |\n")
+            # print(f"| {spin1} | {spin2} | {spin3} |\n")
 
             continue
 
