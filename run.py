@@ -19,6 +19,9 @@ def program_banner():
 """)
 
 
+program_banner()
+
+
 def welcome_user():
     """
     This function asks for an input from the user and displays a welcome message, followed by
@@ -189,8 +192,8 @@ def slot_machine(bet, new_balance):
         if go_again == "y":
 
             # asking for new bet from user to continue playing.
-            program_banner()
             clear_console()
+            program_banner()
             bet = make_bet(new_balance)
 
             spin1 = random.choice(EMOJIS)
@@ -207,8 +210,6 @@ def slot_machine(bet, new_balance):
 
 
 def main():
-    clear_console()
-    program_banner()
     welcome_user()
     balance = user_deposit()
     bet = make_bet(balance)
