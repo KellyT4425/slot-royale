@@ -140,7 +140,7 @@ def slot_machine(bet, new_balance):
             spin1 = random.choice(EMOJIS)
             spin2 = random.choice(EMOJIS)
             spin3 = random.choice(EMOJIS)
-            print(f"\r| {spin1} | {spin2} | {spin3} | \n", end="", flush=True)
+            print(f"\r| {spin1} | {spin2} | {spin3} |", end="", flush=True)
             time.sleep(0.1)  # Delay between "spins"
 
         print()  # Move to next line after final spin result
