@@ -1,4 +1,5 @@
 import random
+import os
 
 
 def program_banner():
@@ -96,6 +97,10 @@ def make_bet(current_balance):
         bet = get_valid_float(
             f"Please place a bet (max £{current_balance:.2f}): £\n", max_value=current_balance)
         return bet
+
+
+def clear_console():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def decrement_balance(new_balance, bet):

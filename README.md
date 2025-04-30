@@ -3,6 +3,7 @@
 # **Slot Royale**
 
 ## Description
+Slot Royale is a Command Line Interface **CLI** program that runs in the terminal. The program is a digital slot machine which users can interact with in the terminal. Main functions of the game include allowing the user to make a deposit, place bets and test there luck. Watch the reel spin, and cross those fingers, did you get a JACKPOT!. Simple to use features, where there is no need to worry if you run out of funds, you can top and keep playing. 
 
 ## Technology
 
@@ -24,7 +25,7 @@
   * `decrement_balance()`
   * `slot_machine()`
   * `main()`
-  * 
+  
 ## Manual Testing
 
 ### Validation
