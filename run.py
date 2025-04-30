@@ -150,11 +150,14 @@ def slot_machine(bet, new_balance):
             # Top-up option added when players balance is 0, means that player
             # doesnt have to restart the program to continue playing.
             top_up = input(
-                "Would you like to make a deposit?: y/n  \U0001F929 \n")
+                "Would you like to make a deposit?: y/n  \U0001F929 \n").lower
             if top_up == "y":
-                user_deposit()
+                deposit_amount = user_deposit()
+                new_balance += deposit_amount
+                print(f"Your new balance is: £{new_balance:.2f}")
+                slot_machine(new_balance, bet)
 
-            if top_up == "n":
+            elif top_up == "n":
                 print("Thank you for playing, Hope to see you again soon!")
 
             break
