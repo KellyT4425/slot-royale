@@ -50,7 +50,7 @@ def get_valid_name():
 def get_valid_float(prompt, min_value=0.01, max_value=None):
     """
     Ensure the user is inputing a valid number or float like 10 or 10.00. This
-    function is usering in deposits and bets.
+    function is used in deposits and bets.
 
     """
     while True:
@@ -61,7 +61,7 @@ def get_valid_float(prompt, min_value=0.01, max_value=None):
                 print(
                     f"Please enter an amount greater than or equal to £{min_value:.2f}.\n")
             # checks that max_value is not None and that the user value is
-            # > max_value such as users balance. parameter is optional if user does not
+            # > min_value such as users balance. parameter is optional if user does not
             # provide a max_value it will default to None.
             elif max_value is not None and value > max_value:
                 print(
@@ -146,6 +146,15 @@ def slot_machine(bet, new_balance):
         if new_balance == 0:  # Once at 0 game is over
             print("You have no more funds! Game Over \U00002620 ")
             print("Restart and top up your Balance! \U0001F929 \n")
+
+            # Top-up option added when players balance is 0, means that player
+            # doesnt have to restart the program to continue playing.
+            top_up = input(f"Would you like to make a deposit? y/n   \n")
+            if top_up == "y":
+                user_deposit()
+
+            if top_up == "n":
+                print("Thank you for playing, Hope to see you again soon!")
 
             break
 
