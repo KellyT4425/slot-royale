@@ -81,6 +81,7 @@ def user_deposit():
     """
     balance = 0
     deposit = get_valid_float("Please make a deposit: £ \n")
+    print()
     balance += deposit
 
     return balance
@@ -124,8 +125,6 @@ def slot_machine(bet, new_balance):
     spin2 = random.choice(EMOJIS)
     spin3 = random.choice(EMOJIS)
 
-    # print(f"| {spin1} | {spin2} | {spin3} |\n")
-
     while True:
         """
         If spin1, spin2, spin3 == then it is a win. bet * 3, new_balance updated with 
@@ -134,7 +133,6 @@ def slot_machine(bet, new_balance):
         new_balance = decrement_balance(
             new_balance, bet)  # decrements bet from balance.
 
-        # clear_console()
         print("Spinning the reels...", end="", flush=True)
         print()
         for i in range(20):  # Number of spin cycles
@@ -163,13 +161,14 @@ def slot_machine(bet, new_balance):
             # Top-up option added when players balance is 0, means that player
             # doesnt have to restart the program to continue playing.
             top_up = input(
-                "Would you like to make a deposit?: y/n  \U0001F929 \n").lower()
+                "Would you like to make a deposit?: (y/n)  \U0001F929 \n").lower()
+            print()
 
             if top_up == "y":
                 deposit_amount = user_deposit()
                 new_balance += deposit_amount
-                print(f"Your new balance is: £{new_balance:.2f} /n")
-                slot_machine(new_balance, deposit_amount)
+                print(f"Your new balance is: £{new_balance:.2f} \n")
+                print()
 
             elif top_up == "n":
                 print("Thank you for playing, Hope to see you again soon!")
@@ -177,6 +176,7 @@ def slot_machine(bet, new_balance):
                 break
 
         go_again = input("Play again? (y/n): \n").lower()
+        print()
         """
         Provides user with an option to play again after a win or loss. User
         offered to make a new bet.
