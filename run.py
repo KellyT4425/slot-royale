@@ -136,6 +136,7 @@ def slot_machine(bet, new_balance):
 
         # clear_console()
         print("Spinning the reels...", end="", flush=True)
+        print()
         for i in range(20):  # Number of spin cycles
             spin1 = random.choice(EMOJIS)
             spin2 = random.choice(EMOJIS)
