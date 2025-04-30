@@ -189,8 +189,8 @@ def slot_machine(bet, new_balance):
         if go_again == "y":
 
             # asking for new bet from user to continue playing.
-            clear_console()
             program_banner()
+            clear_console()
             bet = make_bet(new_balance)
 
             spin1 = random.choice(EMOJIS)
@@ -207,6 +207,8 @@ def slot_machine(bet, new_balance):
 
 
 def main():
+    clear_console()
+    program_banner()
     welcome_user()
     balance = user_deposit()
     bet = make_bet(balance)
