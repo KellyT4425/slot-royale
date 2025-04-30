@@ -3,6 +3,17 @@ import os
 import time
 
 
+def clear_console():
+    """
+    using os.system python library. Function allows for clearing the console
+    at different stages of the program.
+    """
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
+clear_console()
+
+
 def program_banner():
 
     print()
@@ -105,14 +116,6 @@ def make_bet(current_balance):
         return bet
 
 
-def clear_console():
-    """
-    using os.system python library. Function allows for clearing the console
-    at different stages of the program.
-    """
-    os.system('cls' if os.name == 'nt' else 'clear')
-
-
 def decrement_balance(new_balance, bet):
     """
     Function takes the user bet amount away from the users new balance.
@@ -193,7 +196,6 @@ def slot_machine(bet, new_balance):
 
             # asking for new bet from user to continue playing.
             clear_console()
-            program_banner()
             bet = make_bet(new_balance)
 
             spin1 = random.choice(EMOJIS)
