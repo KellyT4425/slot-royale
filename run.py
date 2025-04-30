@@ -145,11 +145,12 @@ def slot_machine(bet, new_balance):
 
         if new_balance == 0:  # Once at 0 game is over
             print("You have no more funds! Game Over \U00002620 ")
-            print("Restart and top up your Balance! \U0001F929 \n")
+            # print("Restart and top up your Balance! \U0001F929 \n")
 
             # Top-up option added when players balance is 0, means that player
             # doesnt have to restart the program to continue playing.
-            top_up = input(f"Would you like to make a deposit? y/n   \n")
+            top_up = input(
+                "Would you like to make a deposit?: y/n  \U0001F929 \n")
             if top_up == "y":
                 user_deposit()
 
