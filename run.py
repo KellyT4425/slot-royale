@@ -98,10 +98,15 @@ def make_bet(current_balance):
         # ensuring the user does not over bet there current balance as it is set to max.
         bet = get_valid_float(
             f"Please place a bet (max £{current_balance:.2f}): £\n", max_value=current_balance)
+        print()
         return bet
 
 
 def clear_console():
+    """
+    using os.system python library. Function allows for clearing the console
+    at different stages of the program.
+    """
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
@@ -192,8 +197,6 @@ def slot_machine(bet, new_balance):
             spin2 = random.choice(EMOJIS)
             spin3 = random.choice(EMOJIS)
 
-            # print(f"| {spin1} | {spin2} | {spin3} |\n")
-
             continue
 
         if go_again == "n":
@@ -205,7 +208,7 @@ def slot_machine(bet, new_balance):
 
 def main():
     clear_console()
-    program_banner()
+    # program_banner()
     welcome_user()
     balance = user_deposit()
     bet = make_bet(balance)
