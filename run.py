@@ -207,8 +207,6 @@ def slot_machine(bet, new_balance):
 
 
 def main():
-    clear_console()
-    # program_banner()
     welcome_user()
     balance = user_deposit()
     bet = make_bet(balance)
