@@ -187,6 +187,9 @@ def slot_machine(bet, new_balance):
                 break
 
         go_again = input("Play again? (y/n): \n").lower()
+        if go_again != "y" or go_again != "n":
+            print("Invalid input, please type either (n/y)!")
+
         print()
         """
         Provides user with an option to play again after a win or loss. User
