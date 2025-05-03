@@ -88,6 +88,10 @@ def get_valid_float(prompt, min_value=0.01, max_value=None):
 
 
 def get_valid_input(prompt):
+    """
+    Makes sure the users input is either "y" or "n". Any other input is handled
+    by an invalid input, error message. 
+    """
 
     while True:
         user_input = input(prompt).lower()
@@ -182,8 +186,8 @@ def slot_machine(bet, new_balance):
 
             # Top-up option added when players balance is 0, means that player
             # doesnt have to restart the program to continue playing.
-            top_up = input(
-                "Would you like to make a deposit?: (y/n)  \U0001F929 \n").lower()
+            top_up = get_valid_input(
+                "Would you like to make a deposit?: (y/n)  \U0001F929 \n")
             print()
 
             if top_up == "y":
@@ -197,7 +201,7 @@ def slot_machine(bet, new_balance):
 
                 break
 
-        go_again = get_valid_input("Play again? (y/n): \n")
+        go_again = get_valid_input("Play again?: (y/n) \n")
 
         print()
         """
