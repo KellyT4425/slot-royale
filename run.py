@@ -87,6 +87,17 @@ def get_valid_float(prompt, min_value=0.01, max_value=None):
             print("Invalid input. Please enter a number like 10 or 10.00\n")
 
 
+def get_valid_input(prompt):
+
+    while True:
+        user_input = input(prompt).lower()
+        valid_input = ("y", "n")
+        if user_input in valid_input:
+            return user_input
+        else:
+            print("Invalid input, please enter either y or n!")
+
+
 def user_deposit():
     """
     This function allows the user to input a deposit in order to place bets.
@@ -186,9 +197,7 @@ def slot_machine(bet, new_balance):
 
                 break
 
-        go_again = input("Play again? (y/n): \n").lower()
-        if go_again != "y" or go_again != "n":
-            print("Invalid input, please type either (n/y)!")
+        go_again = get_valid_input("Play again? (y/n): \n")
 
         print()
         """
