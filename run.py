@@ -165,11 +165,11 @@ def slot_machine(bet, new_balance):
     slot machine - takes a tuple of emojis, displays a random
     selection for user. Determines win or loss.
     """
-    # EMOJIS = ('\U0001F34A', '\U0001F34B', '\U0001F34E', '\U00002B50')
+    EMOJIS = ('\U0001F34A', '\U0001F34B', '\U0001F34E', '\U00002B50')
 
-    # spin1 = random.choice(EMOJIS)
-    # spin2 = random.choice(EMOJIS)
-    # spin3 = random.choice(EMOJIS)
+    spin1 = random.choice(EMOJIS)
+    spin2 = random.choice(EMOJIS)
+    spin3 = random.choice(EMOJIS)
 
     while True:
         """
