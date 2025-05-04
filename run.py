@@ -75,13 +75,13 @@ def get_valid_float(prompt, min_value=0.01, max_value=None):
             # checks if users value input is < min_value default parameter.
             if value < min_value:
                 print(
-                    f"Please enter an amount greater than or equal to £{min_value:.2f}.\n")
+                    f"Please enter an amount greater or equal to £{min_value:.2f}.\n")
             # checks that max_value is not None and that the user value is
-            # > min_value such as users balance. parameter is optional if user does not
-            # provide a max_value it will default to None.
+            # > min_value such as users balance. parameter is optional if
+            # user does not provide a max_value it will default to None.
             elif max_value is not None and value > max_value:
                 print(
-                    f"Please enter an amount less than or equal to £{max_value:.2f}.\n")
+                    f"You exceeded your balance £{max_value:.2f}.\n")
             else:
                 return round(value, 2)  # rounds result to 2 decimal places.
         except ValueError:
@@ -104,8 +104,9 @@ def get_valid_input(prompt):
 
 def user_deposit():
     """
-    This function allows the user to input a deposit in order to place bets.
-    It is using the get_valid_float() to validate user input. As specified above
+    This function allows the user to input a deposit in order
+    to place bets. It is using the get_valid_float() to
+    validate user input.  As specified above
     with value = float(input(prompt))
     """
     balance = 0
@@ -118,16 +119,17 @@ def user_deposit():
 
 def make_bet(current_balance):
     """
-    Function to allow user to place a bet before playing, this will be decremented
-    from there balance. It also ensures that the user does not over bet there
-    balance
+    Function to allow user to place a bet before playing,
+    this will be decremented from there balance.
+    It also ensures that the user does not over bet there balance
     """
     while True:
-        # Using the get_valid_float() it is assigning the max_value parameter to the
-        # current_balance ensuring the user does not over bet there current balance as
-        # it is set to max.
+        # Using the get_valid_float() it is assigning the max_value
+        # parameter to the current_balance ensuring the user does
+        # not over bet there current balance as it is set to max.
         bet = get_valid_float(
-            f"Please place a bet (max £{current_balance:.2f}): £\n", max_value=current_balance)
+            f"Please place a bet (max £{current_balance:.2f}): £\n",
+            max_value=current_balance)
         print()
         return bet
 
@@ -153,7 +155,7 @@ def slot_machine(bet, new_balance):
 
     while True:
         """
-        If spin1, spin2, spin3 == then it is a win. bet * 3, 
+        If spin1, spin2, spin3 == then it is a win. bet * 3,
         new_balance updated with winnings. else: user lost the round.
         """
         new_balance = decrement_balance(
@@ -205,7 +207,7 @@ def slot_machine(bet, new_balance):
 
         print()
         """
-        Provides user with an option to play again after a win or loss. 
+        Provides user with an option to play again after a win or loss.
         User offered to make a new bet.
         """
         if go_again == "y":
@@ -222,7 +224,7 @@ def slot_machine(bet, new_balance):
 
         if go_again == "n":
             print(
-                f"Thank you for Playing your final balance is: £{new_balance:.2f} \U0001F44B \n")
+                f"Thank you for Playing your balance is: £{new_balance:.2f} \U0001F44B \n")
 
             break
 

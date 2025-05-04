@@ -1,15 +1,15 @@
 ![Slot Royale](images-readme/slot-royale.png)
 
-# **SLOT ROYALE** 
+# **SLOT ROYALE**
 
 ## **Technology**
 
 ### Python 3.12
 Supported by Python Built-in Libraries:
 1. `random` [Python](https://docs.python.org/3/library/random.html)
-2. `os` [Python](https://docs.python.org/3/library/os.html)          
-3. `time` [Python](https://docs.python.org/3/library/time.html) 
-                                                                                          
+2. `os` [Python](https://docs.python.org/3/library/os.html)
+3. `time` [Python](https://docs.python.org/3/library/time.html)
+
 
 
 ## **Description**
@@ -68,15 +68,74 @@ prompt to top up, make a deposit.
 
 [CI Python Linter](https://pep8ci.herokuapp.com/#)
 
-[Python Tutor](https://pythontutor.com/)
+> While validating the functionality of my code to ensure it meets the required specifications and performs efficiently. I encountered <em>"line too long"</em> warnings. Despite my efforts to keep the lines concise, certain lines must remain long to ensure user feedback is communicated efficiently. Please see below, results from my **CI Python Linter**
 
-## Bugs
+![Validation](images-readme/CI-python-linter.png)
 
-> When the user lost and placed a `new_bet`, the balance was not decrementing to reflect the new bet.
+I also used [Python Tutor](https://pythontutor.com/) throughout the development of my program to ensure my code was behaving as it should. It was very useful for debugging, where it allowed me to see if there was any errors in patricular parts of my code, as the python tutor would simple not run specific blocks of code, or even provide incorrect outputs.
 
-![Bug1](readme-images/bug-1.png)
+
+
+## Manual Testing
+
+### Bugs and Fixes
+
+> When the user lost and placed a `new_bet`, the balance was not decrementing to reflect the new bet. Bug found where in the code where the `new_balance` was not being updated to reflect the `new_bet` amount.
+
+![Bug1](images-readme/bug-1.png)
+
+**Code fix where `decrement_balance` function.**
+
+![Fix1](images-readme/fix-bug1.1.png)
+
+**Function being called correctly within the `slot_machine` function.**
+
+![Fix1.1](images-readme/fix-bug1.png)
+
+> Bug when user is prompted <em>"Would you like to make a deposit: y/n".</em> When the user typed "y" in this instance, nothing happened. The program should have displayed a message asking the user to top up there balance.
+
+![Bug2](images-readme/bug-3.png)
+
+**Bug fix in code where `new_balance += deposit_amount` was assigned correctly, instead I had wrote `deposit_amount += new_balance`.**
+
+![Fix2](images-readme/bug-fix2.png)
+
+> As depicted in the below image, there is a trailing, `ls...` this bug was left over text from the print statement `print("Spinning the reels...", end="", flush=True)`.
+
+![Bug3](images-readme/bug-4.png)
+
+**A empty `print()` statement was added to ensure adequate spacing.**
+
+![Fix3](images-readme/fix-3.png)
+
+> Duplicated `program_banner` displayed every time a user choose to play again, this would continue to duplicate depending on how many times the user choose to play again, in this case the user only decided to play again once.
+
+![Bug4](images-readme/bug-7.png)
+
+**This bug was fixed by taken `clear_console` and `program_banner` function calls out of the `main()` function and placing them directly under each function as displayed in the image below. This ensured that the `clear_console` function was called at the beginning of the program and that the `program_banner` remained on the top of the program throughout.**
+
+![Fix4](images-readme/fix-4.png)
 
 ## Deployment
+
+The project was deployed to Heroku using the following steps:
+
+1. Sign in to Heroku and access the dashboard
+2. In the top right corner, click the **"New"** dropdown menu and then click **"Create new app"**.
+3. Choose a name for your app, then change your region accordingly.
+4. Click **"Create app"**.
+5. On the next page that loads after clicking **"Create app"**, click **"Settings"** in the top navigation bar.
+6. Click on **"Reveal Config Vars"**
+7. Add a new Config Var: type **'PORT'** in the **'KEY'** section, and type **'8000'** into the **'VALUE'** section, then click **"Add"**.
+8. Next, scroll down to the **"Buildpack"** section and click **"Add buildpack"** they must be in order <em>heroku/python</em> then <em>heroku/nodejs</em> after.
+9. In the top navigation bar, click the **"Deploy"** tab.
+10. In the **"Deployment Method"** section, click on GitHub to connect to your GitHub account.
+11. After logging into your GitHub account, search for your GitHub repository name (for this project, it was **"slot-royale"**)
+12. Click on the repository once found to connect it.
+13. Scroll down to the section **"Automatic Deploys"** and click on the **"Enable Automatic Deploys"** button
+Then underneath, make sure the branch for the project is **"main"** and click on the **"Deploy"** button
+Wait for Heroku to display that the app was deployed successfully.
+1.  You can also choose **"manual deploy"**.
 
 ## Credits
 [ASCII ART](https://www.ascii-art-generator.org/)
