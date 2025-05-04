@@ -35,8 +35,9 @@ program_banner()
 
 def welcome_user():
     """
-    This function asks for an input from the user and displays a welcome message, followed by
-    brief instructions on the game.
+    This function asks for an input from the user and
+    displays a welcome message, followed by brief
+    instructions on the game.
     """
     name = get_valid_name()
     print(f"Welcome {name} to Slot Royale. \U0001F44B \n")
@@ -48,9 +49,9 @@ def welcome_user():
 
 def get_valid_name():
     """
-    Asks user for name input, checks the actual name, ensuring any extra spaces are not included in
-    validation. If invalid it informs the user and asks for letters only and loops asking user
-    for input again.
+    Asks user for valid name input.
+    If invalid it informs the user and asks for
+    letters only and loops, asking user for input again.
     """
     while True:
         # Removes any leading or trailing spaces from the input
@@ -64,15 +65,15 @@ def get_valid_name():
 
 def get_valid_float(prompt, min_value=0.01, max_value=None):
     """
-    Ensure the user is inputing a valid number or float like 10 or 10.00. This
-    function is used in deposits and bets.
-
+    Ensure the user is inputing a valid number or float
+    like 10 or 10.00. This function is used in deposits and bets.
     """
     while True:
         try:
             # ensures flexibilty using input prompt
             value = float(input(prompt))
-            if value < min_value:  # checks if users value input is < min_value default parameter.
+            # checks if users value input is < min_value default parameter.
+            if value < min_value:
                 print(
                     f"Please enter an amount greater than or equal to £{min_value:.2f}.\n")
             # checks that max_value is not None and that the user value is
@@ -89,10 +90,9 @@ def get_valid_float(prompt, min_value=0.01, max_value=None):
 
 def get_valid_input(prompt):
     """
-    Makes sure the users input is either "y" or "n". Any other input is handled
-    by an invalid input, error message. 
+    Makes sure the users input is either "y" or "n".
+    Any other input is handled by an invalid input, error message.
     """
-
     while True:
         user_input = input(prompt).lower()
         valid_input = ("y", "n")
@@ -119,12 +119,13 @@ def user_deposit():
 def make_bet(current_balance):
     """
     Function to allow user to place a bet before playing, this will be decremented
-    from there balance. It also ensures that the user does not over bet there 
+    from there balance. It also ensures that the user does not over bet there
     balance
     """
     while True:
-        # Using the get_valid_float() it is assigning the max_value parameter to the current_balance
-        # ensuring the user does not over bet there current balance as it is set to max.
+        # Using the get_valid_float() it is assigning the max_value parameter to the
+        # current_balance ensuring the user does not over bet there current balance as
+        # it is set to max.
         bet = get_valid_float(
             f"Please place a bet (max £{current_balance:.2f}): £\n", max_value=current_balance)
         print()
@@ -139,36 +140,57 @@ def decrement_balance(new_balance, bet):
     return result
 
 
-def slot_machine(bet, new_balance):
-    """
-    slot machine - takes a tuple of emojis, displays a random
-    selection for user. 3 matched = win new balance displayed, if user
-    loses balance decremented.
-    """
+def spin_reels():
+
     EMOJIS = ('\U0001F34A', '\U0001F34B', '\U0001F34E', '\U00002B50')
 
     spin1 = random.choice(EMOJIS)
     spin2 = random.choice(EMOJIS)
     spin3 = random.choice(EMOJIS)
 
+    print("Spinning the reels...", end="", flush=True)
+    print()
+    for i in range(20):  # Number of spin cycles
+        spin1 = random.choice(EMOJIS)
+        spin2 = random.choice(EMOJIS)
+        spin3 = random.choice(EMOJIS)
+        print(f"\r| {spin1} | {spin2} | {spin3} |", end="", flush=True)
+        time.sleep(0.1)  # Delay between "spins"
+
+        print()  # Move to next line after final spin result
+
+
+def slot_machine(bet, new_balance):
+    """
+    slot machine - takes a tuple of emojis, displays a random
+    selection for user. Determines win or loss.
+    """
+    # EMOJIS = ('\U0001F34A', '\U0001F34B', '\U0001F34E', '\U00002B50')
+
+    # spin1 = random.choice(EMOJIS)
+    # spin2 = random.choice(EMOJIS)
+    # spin3 = random.choice(EMOJIS)
+
     while True:
         """
-        If spin1, spin2, spin3 == then it is a win. bet * 3, new_balance updated with 
-        winnings. else: user lost the round.
+        If spin1, spin2, spin3 == then it is a win. bet * 3, 
+        new_balance updated with winnings. else: user lost the round.
         """
         new_balance = decrement_balance(
             new_balance, bet)  # decrements bet from balance.
 
-        print("Spinning the reels...", end="", flush=True)
-        print()
-        for i in range(20):  # Number of spin cycles
-            spin1 = random.choice(EMOJIS)
-            spin2 = random.choice(EMOJIS)
-            spin3 = random.choice(EMOJIS)
-            print(f"\r| {spin1} | {spin2} | {spin3} |", end="", flush=True)
-            time.sleep(0.1)  # Delay between "spins"
+        spin_reels()
 
-        print()  # Move to next line after final spin result
+        # print("Spinning the reels...", end="", flush=True)
+        # print()
+        # for i in range(20):  # Number of spin cycles
+        # spin1 = random.choice(EMOJIS)
+        # spin2 = random.choice(EMOJIS)
+        # spin3 = random.choice(EMOJIS)
+        # print(f"\r| {spin1} | {spin2} | {spin3} |", end="", flush=True)
+        # time.sleep(0.1)  # Delay between "spins"
+
+        # print()  # Move to next line after final spin result
 
         if spin1 == spin2 == spin3:
             print("JACKPOT you won! \U0001F911 \n")
@@ -205,8 +227,8 @@ def slot_machine(bet, new_balance):
 
         print()
         """
-        Provides user with an option to play again after a win or loss. User
-        offered to make a new bet.
+        Provides user with an option to play again after a win or loss. 
+        User offered to make a new bet.
         """
         if go_again == "y":
 
