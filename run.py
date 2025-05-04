@@ -140,26 +140,6 @@ def decrement_balance(new_balance, bet):
     return result
 
 
-def spin_reels():
-
-    EMOJIS = ('\U0001F34A', '\U0001F34B', '\U0001F34E', '\U00002B50')
-
-    spin1 = random.choice(EMOJIS)
-    spin2 = random.choice(EMOJIS)
-    spin3 = random.choice(EMOJIS)
-
-    print("Spinning the reels...", end="", flush=True)
-    print()
-    for i in range(20):  # Number of spin cycles
-        spin1 = random.choice(EMOJIS)
-        spin2 = random.choice(EMOJIS)
-        spin3 = random.choice(EMOJIS)
-        print(f"\r| {spin1} | {spin2} | {spin3} |", end="", flush=True)
-        time.sleep(0.1)  # Delay between "spins"
-
-        print()  # Move to next line after final spin result
-
-
 def slot_machine(bet, new_balance):
     """
     slot machine - takes a tuple of emojis, displays a random
@@ -179,18 +159,16 @@ def slot_machine(bet, new_balance):
         new_balance = decrement_balance(
             new_balance, bet)  # decrements bet from balance.
 
-        spin_reels()
+        print("Spinning the reels...", end="", flush=True)
+        print()
+        for i in range(20):  # Number of spin cycles
+            spin1 = random.choice(EMOJIS)
+            spin2 = random.choice(EMOJIS)
+            spin3 = random.choice(EMOJIS)
+            print(f"\r| {spin1} | {spin2} | {spin3} |", end="", flush=True)
+            time.sleep(0.1)  # Delay between "spins"
 
-        # print("Spinning the reels...", end="", flush=True)
-        # print()
-        # for i in range(20):  # Number of spin cycles
-        # spin1 = random.choice(EMOJIS)
-        # spin2 = random.choice(EMOJIS)
-        # spin3 = random.choice(EMOJIS)
-        # print(f"\r| {spin1} | {spin2} | {spin3} |", end="", flush=True)
-        # time.sleep(0.1)  # Delay between "spins"
-
-        # print()  # Move to next line after final spin result
+        print()  # Move to next line after final spin result
 
         if spin1 == spin2 == spin3:
             print("JACKPOT you won! \U0001F911 \n")
