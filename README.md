@@ -171,4 +171,18 @@ CI Slack Community, and tutors.
 
 [CS50 Duck Debugger](https://cs50.ai/chat) I used this to help me talk through my problem solving.
 
+[Python Complier - programiz](https://www.programiz.com/python-programming/online-compiler/) this was used to test my python program where I ran blocks of code to check for expected functionality
+
+[Lucid Chart](https://www.lucidchart.com/blog/automate-your-work-with-lucidchart) was used to create a flowchart displaying the over all program flow start to finish.
+
 [BBC Bitesize Revision](https://www.bbc.co.uk/bitesize/subjects/zvc9q6f)
+
+[TedEd](https://www.youtube.com/@TEDEd)
+
+[DEV](https://dev.to/)
+
+[W3Schools](https://www.w3schools.com/)
+
+[Heroku](https://www.heroku.com/)
+
+[ChatGBT](https://chatgpt.com/?utm_source=google&utm_medium=paidsearch_nonbrand&utm_campaign=DEPT_SEM_Google_NonBrand_Acquisition_EMEA_Ireland_Consumer_CPA_BAU_Generic-Mix_English&utm_term=online%20chat%20with%20ai&gad_source=1&gbraid=0AAAAA-IW-UWEJG9c98MNsrZ5DfLplivGM&gclid=Cj0KCQjww-HABhCGARIsALLO6XxJzqP6jGUZyuh0kMSxxG4_CTNhhYikT0vTGn3fJeVtPisiBz8iw1IaAsY7EALw_wcB) used to generate readme SLOT ROYALE main image.
