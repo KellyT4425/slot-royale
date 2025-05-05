@@ -61,10 +61,7 @@ prompt to top up, make a deposit.
 - `slot_machine()`
 - `main()`
 
-## Manual Testing
-
-
-### Validation
+## Validation
 
 [CI Python Linter](https://pep8ci.herokuapp.com/#)
 
@@ -96,7 +93,7 @@ I also used [Python Tutor](https://pythontutor.com/) throughout the development 
 
 ![Bug2](images-readme/bug-3.png)
 
-**Bug fix in code where `new_balance += deposit_amount` was assigned correctly, instead I had wrote `deposit_amount += new_balance`.**
+**Bug fix in code where `new_balance += deposit_amount` was not assigned correctly, instead I had wrote `deposit_amount += new_balance`.**
 
 ![Fix2](images-readme/bug-fix2.png)
 
@@ -138,4 +135,19 @@ Wait for Heroku to display that the app was deployed successfully.
 1.  You can also choose **"manual deploy"**.
 
 ## Credits
+
+[CS50 David J Malan](https://www.youtube.com/@cs50)
+
+[Bro Codez](https://www.youtube.com/@BroCodez)
+
+[Python Documentation](https://docs.python.org/3.12/)
+
 [ASCII ART](https://www.ascii-art-generator.org/)
+
+[Mentor](https://www.linkedin.com/in/hamiltondl/) Daniel Hamilton
+
+CI Slack Community, and tutors.
+
+[CS50 Duck Debugger](https://cs50.ai/chat) I used this to help me talk through my problem solving.
+
+[BBC Bitesize Revision](https://www.bbc.co.uk/bitesize/subjects/zvc9q6f)
