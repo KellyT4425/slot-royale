@@ -14,8 +14,6 @@ Supported by Python Built-in Libraries:
 
 ## **Description**
 
-# Slot Royale
-
 Slot Royale is a Command Line Interface (CLI) program that simulates an engaging digital slot machine experience directly in your terminal. Designed with user interaction in mind, this program allows players to immerse themselves in the thrill of gambling without the need for physical machines.
 
 ### Key Features:
@@ -45,7 +43,7 @@ prompt to top up, make a deposit.
 4. I want the program to replicate a spinning reel when the player places a bet, visual effect.
 
 
-## Program Flow Chart
+## **Program Flow Chart**
 
 ![Program Flow Chart](images-readme/program-flow.png)
 
@@ -61,7 +59,11 @@ prompt to top up, make a deposit.
 - `slot_machine()`
 - `main()`
 
-## Validation
+## **Future Features**
+
+
+
+## **Validation**
 
 [CI Python Linter](https://pep8ci.herokuapp.com/#)
 
@@ -73,7 +75,7 @@ I also used [Python Tutor](https://pythontutor.com/) throughout the development 
 
 
 
-## Manual Testing
+## **Manual Testing**
 
 ### Bugs and Fixes
 
@@ -113,7 +115,26 @@ I also used [Python Tutor](https://pythontutor.com/) throughout the development 
 
 ![Fix4](images-readme/fix-4.png)
 
-## Deployment
+## **Error Handling - User Input**
+
+* Valid name input:
+
+  ![Valid name](images-readme/name-input.png)
+
+
+* Valid bet amount: exceeding balance, providing a negative number or letters.
+
+  ![Negative number](images-readme/negative-input.png)
+
+  ![Exceeding balance](images-readme/over-betting-error.png)
+
+  ![Providing Letters](images-readme/invalid-input.png)
+
+* Valid (y/n) user input: This ensure the correct input, as before this validation was set if the user typed a number the program was treating it as if it was the user placing a bet.
+
+  ![Yes or No](images-readme/invalid-input-yes-no.png)
+
+## **Deployment**
 
 The project was deployed to Heroku using the following steps:
 
@@ -134,7 +155,7 @@ Then underneath, make sure the branch for the project is **"main"** and click on
 Wait for Heroku to display that the app was deployed successfully.
 1.  You can also choose **"manual deploy"**.
 
-## Credits
+## **Credits**
 
 [CS50 David J Malan](https://www.youtube.com/@cs50)
 
