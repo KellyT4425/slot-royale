@@ -68,7 +68,7 @@ prompt to top up, make a deposit.
 ## **Future Features** 🌟
 
 Some features that I would like to add when I further develop my skills and confidence:
-* **Mulitplu Game Modes** - as well as having the classic game mode, I would like to add in higher stakes and bigger payouts. I would also like to add in an option for players to compete against each other for a set period of time, with the highest balance winning a prize. 🏆
+* **Mulitple Game Modes** - as well as having the classic game mode, I would like to add in higher stakes and bigger payouts. I would also like to add in an option for players to compete against each other for a set period of time, with the highest balance winning a prize. 🏆
 * **Bonus Rounds** - which can be triggered by combining a specific emoji such as 3 lemons get you a free spin, or 3 stars earns you a higher JACKPOT.
 * **Customize Emojis** players get unlock different sets of emojis for the reels.
 * **Sound Effects** for when player hit a win, deposit money, place a bet or lose a round.
@@ -168,17 +168,17 @@ Wait for Heroku to display that the app was deployed successfully.
 
 ## **Credits** 🎉
 
-[CS50 David J Malan](https://www.youtube.com/@cs50)
+[CS50 David J Malan](https://www.youtube.com/@cs50) used to delve further into conditionals, interation and data structures.
 
-[Bro Codez](https://www.youtube.com/@BroCodez)
+[Bro Codez](https://www.youtube.com/@BroCodez) watched tutorials on Python concepts
 
-[Python Documentation](https://docs.python.org/3.12/)
+[Python Documentation](https://docs.python.org/3.12/) read through Python documentation in relation to `time`, `os`, `random`.
 
-[ASCII ART](https://www.ascii-art-generator.org/)
+[ASCII ART](https://www.ascii-art-generator.org/) used to generate the program banner.
 
-[Mentor](https://www.linkedin.com/in/hamiltondl/) Daniel Hamilton
+[Mentor](https://www.linkedin.com/in/hamiltondl/) Daniel Hamilton amazing support and feedback throughout my project. As a speaclist in back-end development Daniel really provided great insight and guidance.
 
-CI Slack Community, and tutors.
+CI Slack Community, and tutors. Provided unwavering support on those days where I felt lost and overwelmed.
 
 [CS50 Duck Debugger](https://cs50.ai/chat) I used this to help me talk through my problem solving.
 
@@ -186,14 +186,16 @@ CI Slack Community, and tutors.
 
 [Lucid Chart](https://www.lucidchart.com/blog/automate-your-work-with-lucidchart) was used to create a flowchart displaying the over all program flow start to finish.
 
-[BBC Bitesize Revision](https://www.bbc.co.uk/bitesize/subjects/zvc9q6f)
+[BBC Bitesize Revision](https://www.bbc.co.uk/bitesize/subjects/zvc9q6f) used to help revise functions, while also studying algorithms to help with function flow.
 
-[TedEd](https://www.youtube.com/@TEDEd)
+[TedEd](https://www.youtube.com/@TEDEd) watched talks on computational thinking to help me with breaking down the logic.
 
-[DEV](https://dev.to/)
+[DEV](https://dev.to/) took inspiration from articles around code structuring and the use of [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-[W3Schools](https://www.w3schools.com/)
+[W3Schools](https://www.w3schools.com/) engaged in tutorials, particularly around iteration of the reels in the game and also validation code for checking user input.
 
-[Heroku](https://www.heroku.com/)
+[Heroku](https://www.heroku.com/) used to deploy the program, deployment sets listed above.
 
 [ChatGBT](https://chatgpt.com/?utm_source=google&utm_medium=paidsearch_nonbrand&utm_campaign=DEPT_SEM_Google_NonBrand_Acquisition_EMEA_Ireland_Consumer_CPA_BAU_Generic-Mix_English&utm_term=online%20chat%20with%20ai&gad_source=1&gbraid=0AAAAA-IW-UWEJG9c98MNsrZ5DfLplivGM&gclid=Cj0KCQjww-HABhCGARIsALLO6XxJzqP6jGUZyuh0kMSxxG4_CTNhhYikT0vTGn3fJeVtPisiBz8iw1IaAsY7EALw_wcB) used to generate readme SLOT ROYALE main image.
+
+[Emoji Charts](https://unicode.org/emoji/charts/full-emoji-list.html) Emoji unicodes where taken from this site, and where used for the slot machine reels and in game visual imagery.
