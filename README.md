@@ -54,7 +54,7 @@ prompt to top up, make a deposit.
 - `user_valid_name()`Validates the users name input, ensure only letters are provided.
 - `user_valid_float()`Validates the users input for deposits and bets eg. by accepting either 10 or 10.00.
 - `get_valid_input()`Validates uers input for yes and no for play again options either y or n are accepted.
-- `user_deposit()`Allows the user to add money to there balance
+- `user_deposit()`Allows the user to add money to there balance.
 - `make_bet()`Provides the user with an option to place a bet amount.
 - `decrement_balance()`ensures the bet amount is taken away from the balance if the user loses a round.
 - `slot_machine()`Main game function, runs the slot machine logic.
@@ -68,6 +68,7 @@ prompt to top up, make a deposit.
 ## **Future Features** 🌟
 
 Some features that I would like to add when I further develop my skills and confidence:
+
 * **Mulitple Game Modes** - as well as having the classic game mode, I would like to add in higher stakes and bigger payouts. I would also like to add in an option for players to compete against each other for a set period of time, with the highest balance winning a prize. 🏆
 * **Bonus Rounds** - which can be triggered by combining a specific emoji such as 3 lemons get you a free spin, or 3 stars earns you a higher JACKPOT.
 * **Customize Emojis** players get unlock different sets of emojis for the reels.
@@ -79,7 +80,7 @@ Some features that I would like to add when I further develop my skills and conf
 
 [CI Python Linter](https://pep8ci.herokuapp.com/#)
 
-> While validating the functionality of my code to ensure it meets the required specifications and performs efficiently. I did not encounter an errors. Please see below, results from my **CI Python Linter**
+> While validating the functionality of my code to ensure it meets the required specifications and performs efficiently. I did not encounter any errors. Please see below, results from my **CI Python Linter**.
 
 ![Validation](images-readme/python-linter.png)
 
@@ -94,11 +95,11 @@ I also used [Python Tutor](https://pythontutor.com/) throughout the development 
 
 ![Bug1](images-readme/bug-1.png)
 
-**Code fix where `decrement_balance` function.**
+**Code fix where `decrement_balance` function.**.
 
 ![Fix1](images-readme/fix-bug1.1.png)
 
-**Function being called correctly within the `slot_machine` function.**
+**Function being called correctly within the `slot_machine` function.**.
 
 ![Fix1.1](images-readme/fix-bug1.png)
 
@@ -149,17 +150,17 @@ I also used [Python Tutor](https://pythontutor.com/) throughout the development 
 
 The project was deployed to Heroku using the following steps:
 
-1. Sign in to Heroku and access the dashboard
+1. Sign in to Heroku and access the dashboard.
 2. In the top right corner, click the **"New"** dropdown menu and then click **"Create new app"**.
 3. Choose a name for your app, then change your region accordingly.
 4. Click **"Create app"**.
 5. On the next page that loads after clicking **"Create app"**, click **"Settings"** in the top navigation bar.
-6. Click on **"Reveal Config Vars"**
+6. Click on **"Reveal Config Vars"**.
 7. Add a new Config Var: type **'PORT'** in the **'KEY'** section, and type **'8000'** into the **'VALUE'** section, then click **"Add"**.
 8. Next, scroll down to the **"Buildpack"** section and click **"Add buildpack"** they must be in order <em>heroku/python</em> then <em>heroku/nodejs</em> after.
 9. In the top navigation bar, click the **"Deploy"** tab.
 10. In the **"Deployment Method"** section, click on GitHub to connect to your GitHub account.
-11. After logging into your GitHub account, search for your GitHub repository name (for this project, it was **"slot-royale"**)
+11. After logging into your GitHub account, search for your GitHub repository name (for this project, it was **"slot-royale"**).
 12. Click on the repository once found to connect it.
 13. Scroll down to the section **"Automatic Deploys"** and click on the **"Enable Automatic Deploys"** button
 Then underneath, make sure the branch for the project is **"main"** and click on the **"Deploy"** button
@@ -170,7 +171,7 @@ Wait for Heroku to display that the app was deployed successfully.
 
 [CS50 David J Malan](https://www.youtube.com/@cs50) used to delve further into conditionals, interation and data structures.
 
-[Bro Codez](https://www.youtube.com/@BroCodez) watched tutorials on Python concepts
+[Bro Codez](https://www.youtube.com/@BroCodez) watched tutorials on Python concepts.
 
 [Python Documentation](https://docs.python.org/3.12/) read through Python documentation in relation to `time`, `os`, `random`.
 
@@ -182,7 +183,7 @@ CI Slack Community, and tutors. Provided unwavering support on those days where 
 
 [CS50 Duck Debugger](https://cs50.ai/chat) I used this to help me talk through my problem solving.
 
-[Python Complier - programiz](https://www.programiz.com/python-programming/online-compiler/) this was used to test my python program where I ran blocks of code to check for expected functionality
+[Python Complier - programiz](https://www.programiz.com/python-programming/online-compiler/) this was used to test my python program where I ran blocks of code to check for expected functionality.
 
 [Lucid Chart](https://www.lucidchart.com/blog/automate-your-work-with-lucidchart) was used to create a flowchart displaying the over all program flow start to finish.
 
