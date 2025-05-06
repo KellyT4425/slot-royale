@@ -1,10 +1,10 @@
 ![Slot Royale](images-readme/slot-royale.png)
 
-# **SLOT ROYALE**
+# **SLOT ROYALE** 🎰
 
 ## **Technology**
 
-### Python 3.12
+### Python 3.12 🐍
 Supported by Python Built-in Libraries:
 1. `random` [Python](https://docs.python.org/3/library/random.html)
 2. `os` [Python](https://docs.python.org/3/library/os.html)
@@ -17,22 +17,23 @@ Supported by Python Built-in Libraries:
 Slot Royale is a Command Line Interface (CLI) program that simulates an engaging digital slot machine experience directly in your terminal. Designed with user interaction in mind, this program allows players to immerse themselves in the thrill of gambling without the need for physical machines.
 
 ### Key Features:
-- **User-Friendly Interface**: Navigate easily through a simple command-line interface that welcomes you and guides you through the game.
-- **Deposit and Bet**: Users can make deposits to fund their account and place bets to test their luck on the reels.
-- **Exciting Gameplay**: Spin the reels and watch as emojis align for a chance to hit the JACKPOT! The game provides immediate feedback on wins and losses.
-- **Top-Up Option**: If you run out of funds, no need to worry. You can easily top up your balance and continue playing without interruption.
-- **Engaging User Experience**: Enjoy a friendly welcome message and clear simple instructions to enhance your gaming experience.
+- 😁 **User-Friendly Interface**: Navigate easily through a simple command-line interface that welcomes you and guides you through the game.
+- 🍀 **Deposit and Bet**: Users can make deposits to fund their account and place bets to test their luck on the reels.
+- 🤪 **Exciting Gameplay**: Spin the reels and watch as emojis align for a chance to hit the JACKPOT! The game provides immediate feedback on wins and losses.
+- 💰 **Top-Up Option**: If you run out of funds, no need to worry. You can easily top up your balance and continue playing without interruption.
+- 😲 **Engaging User Experience**: Enjoy a friendly welcome message and clear simple instructions to enhance your gaming experience.
 
 Join the fun with Slot Royale and see if you can strike it rich!
 
 
-## **User Stories**
+## **User Stories** 📖
+
 #### User's Goals:
 1. I want to make a deposit so that I can fund my account and play the slot machine.
-2. I want to place a bet so that I can try my luck at winning.I want to see my current balance so that I can manage my funds effectively while playing.
+2. I want to place a bet so that I can try my luck at winning. I want to see my current balance so that I can manage my funds effectively while playing.
 3. I want to choose my bet amount so that I can control how much I risk on each spin.
 4. I want to receive feedback on my bets so that I know if I won or lost after each spin.
-5. I want to have the option to play again after each round, so I can continue enjoying the game without restarting the program.
+5. I want to have the option to play again after each round, so I can continue enjoying the game without  restarting the program.
 6. I want to be welcomed with a friendly message when I start the game, to enhance my gaming experience.
 
 #### Program Owner Goals:
@@ -43,27 +44,38 @@ prompt to top up, make a deposit.
 4. I want the program to replicate a spinning reel when the player places a bet, visual effect.
 
 
-## **Program Flow Chart**
+## **Program Flow Chart** 🔄
 
 ![Program Flow Chart](images-readme/program-flow.png)
 
-- `clear_console()`
-- `program_banner()`
-- `welcome_user()`
-- `user_valid_name()`
-- `user_valid_float()`
-- `get_valid_input()`
-- `user_deposit()`
-- `make_bet()`
-- `decrement_balance()`
-- `slot_machine()`
-- `main()`
+- `clear_console()`clears the console so that the terminal does not get overwelming visually.
+- `program_banner()`Displays the game banner.
+- `welcome_user()`Greets the user and collects their name.
+- `user_valid_name()`Validates the users name input, ensure only letters are provided.
+- `user_valid_float()`Validates the users input for deposits and bets eg. by accepting either 10 or 10.00.
+- `get_valid_input()`Validates uers input for yes and no for play again options either y or n are accepted.
+- `user_deposit()`Allows the user to add money to there balance
+- `make_bet()`Provides the user with an option to place a bet amount.
+- `decrement_balance()`ensures the bet amount is taken away from the balance if the user loses a round.
+- `slot_machine()`Main game function, runs the slot machine logic.
+- `main()`Holds all the main function calls in one place.
 
-## **Future Features**
+### Decision Points 🧠
+- **Play Again?**: After each round, the user is prompted to play again or exit.
+- **Balance Check**: If the balance reaches zero, the user is prompted to deposit more funds.
 
 
+## **Future Features** 🌟
 
-## **Validation**
+Some features that I would like to add when I further develop my skills and confidence:
+* **Mulitplu Game Modes** - as well as having the classic game mode, I would like to add in higher stakes and bigger payouts. I would also like to add in an option for players to compete against each other for a set period of time, with the highest balance winning a prize. 🏆
+* **Bonus Rounds** - which can be triggered by combining a specific emoji such as 3 lemons get you a free spin, or 3 stars earns you a higher JACKPOT.
+* **Customize Emojis** players get unlock different sets of emojis for the reels.
+* **Sound Effects** for when player hit a win, deposit money, place a bet or lose a round.
+* **Mobile Compatibility** making a version of the game by optimising the CLI for mobile devices.
+
+
+## **Validation** 🔍
 
 [CI Python Linter](https://pep8ci.herokuapp.com/#)
 
@@ -74,10 +86,9 @@ prompt to top up, make a deposit.
 I also used [Python Tutor](https://pythontutor.com/) throughout the development of my program to ensure my code was behaving as it should. It was very useful for debugging, where it allowed me to see if there was any errors in patricular parts of my code, as the python tutor would simple not run specific blocks of code, or even provide incorrect outputs.
 
 
+## **Manual Testing** ⚙️
 
-## **Manual Testing**
-
-### Bugs and Fixes
+### Bugs and Fixes 🦠
 
 > When the user lost and placed a `new_bet`, the balance was not decrementing to reflect the new bet. Bug found where in the code where the `new_balance` was not being updated to reflect the `new_bet` amount.
 
@@ -115,7 +126,7 @@ I also used [Python Tutor](https://pythontutor.com/) throughout the development 
 
 ![Fix4](images-readme/fix-4.png)
 
-## **Error Handling - User Input**
+## **Error Handling - User Input** 🔥
 
 * Valid name input:
 
@@ -134,7 +145,7 @@ I also used [Python Tutor](https://pythontutor.com/) throughout the development 
 
   ![Yes or No](images-readme/invalid-input-yes-no.png)
 
-## **Deployment**
+## **Deployment** 🚀
 
 The project was deployed to Heroku using the following steps:
 
@@ -155,7 +166,7 @@ Then underneath, make sure the branch for the project is **"main"** and click on
 Wait for Heroku to display that the app was deployed successfully.
 1.  You can also choose **"manual deploy"**.
 
-## **Credits**
+## **Credits** 🎉
 
 [CS50 David J Malan](https://www.youtube.com/@cs50)
 
