@@ -79,9 +79,9 @@ Some features that I would like to add when I further develop my skills and conf
 
 [CI Python Linter](https://pep8ci.herokuapp.com/#)
 
-> While validating the functionality of my code to ensure it meets the required specifications and performs efficiently. I encountered <em>"line too long"</em> warnings. Despite my efforts to keep the lines concise, certain lines must remain long to ensure user feedback is communicated efficiently. Please see below, results from my **CI Python Linter**
+> While validating the functionality of my code to ensure it meets the required specifications and performs efficiently. I did not encounter an errors. Please see below, results from my **CI Python Linter**
 
-![Validation](images-readme/CI-python-linter.png)
+![Validation](images-readme/python-linter.png)
 
 I also used [Python Tutor](https://pythontutor.com/) throughout the development of my program to ensure my code was behaving as it should. It was very useful for debugging, where it allowed me to see if there was any errors in patricular parts of my code, as the python tutor would simple not run specific blocks of code, or even provide incorrect outputs.
 
@@ -194,7 +194,7 @@ CI Slack Community, and tutors. Provided unwavering support on those days where 
 
 [W3Schools](https://www.w3schools.com/) engaged in tutorials, particularly around iteration of the reels in the game and also validation code for checking user input.
 
-[Heroku](https://www.heroku.com/) used to deploy the program, deployment sets listed above.
+[Heroku](https://www.heroku.com/) used to deploy the program, deployment steps listed above.
 
 [ChatGBT](https://chatgpt.com/?utm_source=google&utm_medium=paidsearch_nonbrand&utm_campaign=DEPT_SEM_Google_NonBrand_Acquisition_EMEA_Ireland_Consumer_CPA_BAU_Generic-Mix_English&utm_term=online%20chat%20with%20ai&gad_source=1&gbraid=0AAAAA-IW-UWEJG9c98MNsrZ5DfLplivGM&gclid=Cj0KCQjww-HABhCGARIsALLO6XxJzqP6jGUZyuh0kMSxxG4_CTNhhYikT0vTGn3fJeVtPisiBz8iw1IaAsY7EALw_wcB) used to generate readme SLOT ROYALE main image.
 

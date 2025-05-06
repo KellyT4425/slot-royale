@@ -75,7 +75,8 @@ def get_valid_float(prompt, min_value=0.01, max_value=None):
             # checks if users value input is < min_value default parameter.
             if value < min_value:
                 print(
-                    f"Please enter an amount greater or equal to £{min_value:.2f}.\n")
+                    f"Please enter an amount greater or"
+                    f"equal to £{min_value:.2f}.\n")
             # checks that max_value is not None and that the user value is
             # > min_value such as users balance. parameter is optional if
             # user does not provide a max_value it will default to None.
@@ -224,7 +225,8 @@ def slot_machine(bet, new_balance):
 
         if go_again == "n":
             print(
-                f"Thank you for Playing your balance is: £{new_balance:.2f} \U0001F44B \n")
+                f"Thank you for Playing your balance is:"
+                f"£{new_balance:.2f} \U0001F44B \n")
 
             break
 
