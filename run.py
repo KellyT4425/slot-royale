@@ -2,6 +2,12 @@ import random
 import os
 import time
 
+thisList = []  # empty list, append player bets on each spin and if they
+# won the win amount ie:  1. bet: 10 win: 0  2. bet: 20 win: 60
+bet_total = 0  # store the total players bets
+total_spins = 0  # amount of spins
+total_winnings = 0  # overall winnings
+
 
 def clear_console():
     """
@@ -103,6 +109,45 @@ def get_valid_input(prompt):
             print("Invalid input, please enter either y or n!")
 
 
+def add_stats(bet, win):
+    """
+    This function appends the provided bet and win amounts to the global list.
+    The list keeps track of all betting rounds. It then updates the global
+    bet_total.
+    """
+    global bet_total
+    thisList.append([bet, win])
+    bet_total += bet
+
+    return bet_total
+
+
+def calculate_stats():
+    """
+    Calculates and updates the total slot machine stats for the player.
+
+    It computes the total number of spins and winnings, based off
+    of the values stored in the global thisList = [].
+
+    It then updates total_spins and total_winnings.
+
+    """
+    global total_spins, total_winnings
+    total_spins = len(thisList)
+    for _, win in thisList:
+        total_winnings += win
+
+
+def show_stats():
+    """
+    This function display the stats to the user when they respond "y" from
+    an input prompt.
+    """
+    print(f"Total spins: {total_spins}")
+    print(f"Total bets: £{bet_total:.2f}")
+    print(f"Total winnings: £{total_winnings:.2f}")
+
+
 def user_deposit():
     """
     This function allows the user to input a deposit in order
@@ -178,10 +223,18 @@ def slot_machine(bet, new_balance):
             winnings = bet * 3
             new_balance += winnings
             print(f"Congratulations you WON £{winnings:.2f} \U0001F917 \n")
+            add_stats(bet, winnings)
 
         else:  # lost round, display balance, moves to play_again.
             print("You lost this round. \U0001f641 \n")
             print(f"Your current balance is: £{new_balance:.2f} \n")
+            add_stats(bet, 0)
+
+        calculate_stats()  # calls calculate_stats function above.
+        # gets valid input from user.
+        stats = get_valid_input("Would you like to see your stats: (y/n)  \n")
+        if stats == "y":
+            show_stats()
 
         if new_balance == 0:  # Once at 0 game is over
             print("You have no more funds! Game Over \U00002620 ")
