@@ -115,9 +115,10 @@ def add_stats(bet, win):
     The list keeps track of all betting rounds. It then updates the global
     bet_total.
     """
-    global bet_total
+    global bet_total, total_winnings
     thisList.append([bet, win])
     bet_total += bet
+    total_winnings += win
 
     return bet_total
 
