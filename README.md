@@ -56,7 +56,7 @@ Depicts how the key features, user goals and owner goals are demostrated.
 
 ![Program Banner](images-readme/program-banner1.png)
 
-- `welcome_user()`Greets the user and collects their name, providing breif instructions
+- `welcome_user()`Greets the user and collects their name, providing brief instructions.
 
 ![Welcome User](images-readme/welcome-user1.png)
 
@@ -95,6 +95,7 @@ please see: **Error Handling - User Input** below
 ### Decision Points 🧠
 - **Play Again?**: After each round, the user is prompted to play again or exit.
 - **Balance Check**: If the balance reaches zero, the user is prompted to deposit more funds.
+- **Show Stats**: Allows user to choose if they want see there game stats, this provides awareness of bet amount and winnings, along with game spins.
 
 
 ## **Future Features** 🌟
