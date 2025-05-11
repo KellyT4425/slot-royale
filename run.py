@@ -223,13 +223,13 @@ def slot_machine(bet, new_balance):
             print("JACKPOT you won! \U0001F911 \n")
             winnings = bet * 3
             new_balance += winnings
-            print(f"Congratulations you WON £{winnings:.2f} \U0001F917 \n")
             add_stats(bet, winnings)
+            print(f"Congratulations you WON £{winnings:.2f} \U0001F917 \n")
 
         else:  # lost round, display balance, moves to play_again.
             print("You lost this round. \U0001f641 \n")
-            print(f"Your current balance is: £{new_balance:.2f} \n")
             add_stats(bet, 0)
+            print(f"Your current balance is: £{new_balance:.2f} \n")
 
         calculate_stats()  # calls calculate_stats function above.
         # gets valid input from user.
