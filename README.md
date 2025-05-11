@@ -45,19 +45,51 @@ prompt to top up, make a deposit.
 
 
 ## **Program Flow Chart** 🔄
+### Program breakdown
+Depicts how the key features, user goals and owner goals are demostrated.
 
-![Program Flow Chart](images-readme/program-flow.png)
+![Program Flow Chart](images-readme/flow-chart2.png)
 
-- `clear_console()`clears the console so that the terminal does not get overwelming visually.
+- `clear_console()`clears the console so that the terminal does not get overwelming, visually. This function is called when the player chooses to play again.
+
 - `program_banner()`Displays the game banner.
-- `welcome_user()`Greets the user and collects their name.
+
+![Program Banner](images-readme/program-banner1.png)
+
+- `welcome_user()`Greets the user and collects their name, providing breif instructions
+
+![Welcome User](images-readme/welcome-user1.png)
+
+#### Input Validations - Error Handling
+please see: **Error Handling - User Input** below
+
 - `user_valid_name()`Validates the users name input, ensure only letters are provided.
 - `user_valid_float()`Validates the users input for deposits and bets eg. by accepting either 10 or 10.00.
 - `get_valid_input()`Validates uers input for yes and no for play again options either y or n are accepted.
+
+
+#### Stats Functions
+- `add_stats()`
+- `calculate_stats()`
+- `show_stats`
+
+![Show Stats](images-readme/show-stats1.png)
+
 - `user_deposit()`Allows the user to add money to there balance.
+
+![User Deposit](images-readme/user-deposit1.png)
+
+#### Functions, along with the main game `slot_machine` function.
 - `make_bet()`Provides the user with an option to place a bet amount.
+
 - `decrement_balance()`ensures the bet amount is taken away from the balance if the user loses a round.
 - `slot_machine()`Main game function, runs the slot machine logic.
+
+![Make Bet](images-readme/make-bet-reels1.png)
+![0 Funds](images-readme/funds1.png)
+![New Deposit](images-readme/make-deposit-play-again1.png)
+![No Response](images-readme/n-response1.png)
+
 - `main()`Holds all the main function calls in one place.
 
 ### Decision Points 🧠
@@ -127,7 +159,7 @@ I also used [Python Tutor](https://pythontutor.com/) throughout the development 
 
 ![Fix4](images-readme/fix-4.png)
 
-## **Error Handling - User Input** 🔥
+## **Error Handling - User Input**  🔥
 
 * Valid name input:
 

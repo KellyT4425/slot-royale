@@ -278,7 +278,7 @@ def slot_machine(bet, new_balance):
 
         if go_again == "n":
             print(
-                f"Thank you for Playing your balance is:"
+                f"Thank you for Playing your balance is: "
                 f"£{new_balance:.2f} \U0001F44B \n")
 
             break
