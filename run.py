@@ -118,8 +118,6 @@ def add_stats(bet, win):
     global bet_total, total_winnings
     thisList.append([bet, win])
     bet_total += bet
-    total_winnings += win
-
     return bet_total
 
 
@@ -135,6 +133,7 @@ def calculate_stats():
     """
     global total_spins, total_winnings
     total_spins = len(thisList)
+    total_winnings = 0
     for _, win in thisList:
         total_winnings += win
 
@@ -210,7 +209,7 @@ def slot_machine(bet, new_balance):
 
         print("Spinning the reels...", end="", flush=True)
         print()
-        for i in range(20):  # Number of spin cycles
+        for _ in range(20):  # Number of spin cycles
             spin1 = random.choice(EMOJIS)
             spin2 = random.choice(EMOJIS)
             spin3 = random.choice(EMOJIS)
@@ -225,7 +224,6 @@ def slot_machine(bet, new_balance):
             new_balance += winnings
             add_stats(bet, winnings)
             print(f"Congratulations you WON £{winnings:.2f} \U0001F917 \n")
-
         else:  # lost round, display balance, moves to play_again.
             print("You lost this round. \U0001f641 \n")
             add_stats(bet, 0)
