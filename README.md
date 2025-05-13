@@ -1,7 +1,7 @@
 ![Slot Royale](images-readme/slot-royale.png)
 
 # **SLOT ROYALE** 🎰
-
+[**Check it OUT!!!**](https://slot-royale-2490b5f3c0c4.herokuapp.com/) test your luck, and see if you can get a JACKPOT 💰
 ## **Technology**
 
 ### Python 3.12 🐍
@@ -180,6 +180,7 @@ I also used [Python Tutor](https://pythontutor.com/) throughout the development 
   ![Yes or No](images-readme/invalid-input-yes-no.png)
 
 ## **Deployment** 🚀
+[Deployed Program Link........](https://slot-royale-2490b5f3c0c4.herokuapp.com/)
 
 The project was deployed to Heroku using the following steps:
 

@@ -2,6 +2,7 @@ import random
 import os
 import time
 
+# GLOBAL VARIABLES ---------------------------------------------------->
 thisList = []  # empty list, append player bets on each spin and if they
 # won the win amount ie:  1. bet: 10 win: 0  2. bet: 20 win: 60
 bet_total = 0  # store the total players bets
@@ -272,8 +273,6 @@ def slot_machine(bet, new_balance):
             spin1 = random.choice(EMOJIS)
             spin2 = random.choice(EMOJIS)
             spin3 = random.choice(EMOJIS)
-
-            continue
 
         if go_again == "n":
             print(
